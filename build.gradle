@@ -3,9 +3,11 @@ plugins {
     id("se.patrikerdes.use-latest-versions") version "0.2.18"
     id("com.github.ben-manes.versions") version "0.42.0"
     id 'application'
+    id 'checkstyle'
 }
 
 apply plugin: 'java'
+apply plugin: 'checkstyle'
 
 group 'hexlet.code'
 version '1.0-SNAPSHOT'
@@ -24,9 +26,13 @@ test {
 }
 
 application {
-    mainClassName = 'hexlet.code.App'
+    mainClass = 'hexlet.code.App'
 }
 
 compileJava {
     options.release = 17
+}
+
+run {
+    standardInput = System.in
 }
