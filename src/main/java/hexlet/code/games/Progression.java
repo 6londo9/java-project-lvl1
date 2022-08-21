@@ -4,16 +4,16 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class Progression {
-	public static String rightAnswer;
-	public static void progression() {
+    private static String rightAnswer;
+    public static void progression() {
 		Random random = new Random();
-		int originOfLength = 5;
-		int boundOfLength = 11;
+		final int originOfLength = 5;
+		final int boundOfLength = 11;
 		int length = random.nextInt(originOfLength, boundOfLength);
-		int originForFirstNumber = 1;
-		int boundForFirstNumber = 20;
+		final int originForFirstNumber = 1;
+		final int boundForFirstNumber = 20;
 		int start = random.nextInt(originForFirstNumber, boundForFirstNumber);
-		int boundForArrayLength = 10;
+		final int boundForArrayLength = 10;
 		int progress = random.nextInt(boundForArrayLength);
 		int cut = random.nextInt(0, length - 1);
 		int[] progression = new int[length];
@@ -30,7 +30,11 @@ public class Progression {
 		var printArray = Arrays.toString(strProgression).replace("[", "").replace("]", "").replace(",", "");
 		System.out.println("Question: " + printArray);
 	}
-	public static void getCondition() {
+    public static void getCondition() {
 		System.out.println("What number is missing in the progression?");
+	}
+
+    public static String getRightAnswer() {
+		return rightAnswer;
 	}
 }

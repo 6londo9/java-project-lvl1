@@ -3,15 +3,16 @@ package hexlet.code.games;
 import java.util.Random;
 
 public class Calc {
-	public static String rightAnswer;
+    private static String rightAnswer;
 
-	public static void calc() {
+    public static void calc() {
 		Random random = new Random();
-		int boundForNumbers = 20;
+		final int boundForNumbers = 20;
 		int randomNum1 = random.nextInt(boundForNumbers);
 		int randomNum2 = random.nextInt(boundForNumbers);
 		Character[] operator = {'+', '-', '*'};
-		var boundForOperators = random.nextInt(3);
+		final int operatorChoose = 3;
+		int boundForOperators = random.nextInt(operatorChoose);
 		var randomOperation = operator[boundForOperators];
 		int right;
 		switch (randomOperation) {
@@ -32,7 +33,10 @@ public class Calc {
 		}
 		System.out.println("Question: " + randomNum1 + " " + randomOperation + " " + randomNum2);
 	}
-	public static void getCondition() {
+    public static void getCondition() {
 		System.out.println("What is the result of the expression?");
+	}
+    public static String getRightAnswer() {
+		return rightAnswer;
 	}
 }

@@ -3,10 +3,10 @@ package hexlet.code.games;
 import java.util.Random;
 
 public class GCD {
-	public static String rightAnswer;
-	public static void gcd() {
+    private static String rightAnswer;
+    public static void gcd() {
 		Random random = new Random();
-		int boundForNumbers = 100;
+		final int boundForNumbers = 100;
 		int randomNum1 = random.nextInt(boundForNumbers);
 		int randomNum2 = random.nextInt(boundForNumbers);
 		System.out.println("Question: " + randomNum1 + " " + randomNum2);
@@ -19,7 +19,11 @@ public class GCD {
 		}
 		rightAnswer = String.valueOf(right);
 	}
-	public static void getCondition() {
+    public static void getCondition() {
 		System.out.println("Find the greatest common divisor of given numbers.");
+	}
+
+    public static String getRightAnswer() {
+		return rightAnswer;
 	}
 }
