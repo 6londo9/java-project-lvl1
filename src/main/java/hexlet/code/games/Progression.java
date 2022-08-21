@@ -10,8 +10,9 @@ public class Progression {
 		int originOfLength = 5;
 		int boundOfLength = 11;
 		int length = random.nextInt(originOfLength, boundOfLength);
+		int originForFirstNumber = 1;
 		int boundForFirstNumber = 20;
-		int start = random.nextInt(boundForFirstNumber);
+		int start = random.nextInt(originForFirstNumber, boundForFirstNumber);
 		int boundForArrayLength = 10;
 		int progress = random.nextInt(boundForArrayLength);
 		int cut = random.nextInt(0, length - 1);
