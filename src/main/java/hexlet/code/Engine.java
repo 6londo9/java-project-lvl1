@@ -14,6 +14,8 @@ public class Engine {
 			case 4 -> GCD.getCondition();
 			case 5 -> Progression.getCondition();
 			case 6 -> Prime.getCondition();
+			default -> {
+			}
 		}
 		Scanner sc = new Scanner(System.in);
 		for (var i = 0; i < 3; i++) {
@@ -23,6 +25,8 @@ public class Engine {
 				case 4 -> GCD.gcd();
 				case 5 -> Progression.progression();
 				case 6 -> Prime.prime();
+				default -> {
+				}
 			}
 			var answer = sc.next().toLowerCase();
 			switch (a) {
@@ -31,6 +35,8 @@ public class Engine {
 				case 4 -> rightAnswer = GCD.rightAnswer;
 				case 5 -> rightAnswer = Progression.rightAnswer;
 				case 6 -> rightAnswer = Prime.rightAnswer;
+				default -> {
+				}
 			}
 			var wrong = "'" + answer + "' is wrong answer ;(. Correct answer was '" + rightAnswer + "'.";
 			if (answer.equals(rightAnswer) && i == 2) {

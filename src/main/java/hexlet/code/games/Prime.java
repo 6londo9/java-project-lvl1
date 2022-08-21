@@ -6,7 +6,8 @@ public class Prime {
 	public static String rightAnswer;
 	public static void prime() {
 		Random random = new Random();
-		int randomNum = random.nextInt(100);
+		int boundForNumber = 100;
+		int randomNum = random.nextInt(boundForNumber);
 		boolean check = randomNum != 1;
 		for (var i = 2; i <= Math.sqrt(randomNum); i++) {
 			if (randomNum % i == 0) {

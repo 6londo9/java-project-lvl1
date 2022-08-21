@@ -7,9 +7,13 @@ public class Progression {
 	public static String rightAnswer;
 	public static void progression() {
 		Random random = new Random();
-		int length = random.nextInt(5, 11);
-		int start = random.nextInt(20);
-		int progress = random.nextInt(10);
+		int originOfLength = 5;
+		int boundOfLength = 11;
+		int length = random.nextInt(originOfLength, boundOfLength);
+		int boundForFirstNumber = 20;
+		int start = random.nextInt(boundForFirstNumber);
+		int boundForArrayLength = 10;
+		int progress = random.nextInt(boundForArrayLength);
 		int cut = random.nextInt(0, length - 1);
 		int[] progression = new int[length];
 		progression[0] = start;

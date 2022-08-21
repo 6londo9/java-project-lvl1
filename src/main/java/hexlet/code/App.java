@@ -13,27 +13,11 @@ public class App {
                 greet();
                 Cli.greetings();
                 break;
-            case 2:
-                greet();
-                Engine.engine(2);
-                break;
-            case 3:
-                greet();
-                Engine.engine(3);
-                break;
-            case 4:
-                greet();
-                Engine.engine(4);
-                break;
-            case 5:
-                greet();
-                Engine.engine(5);
-                break;
-            case 6:
-                greet();
-                Engine.engine(6);
-                break;
             case 0:
+                break;
+            default:
+                greet();
+                Engine.engine(choice);
                 break;
         }
     }

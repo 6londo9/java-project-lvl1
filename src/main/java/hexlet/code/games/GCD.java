@@ -6,8 +6,9 @@ public class GCD {
 	public static String rightAnswer;
 	public static void gcd() {
 		Random random = new Random();
-		int randomNum1 = random.nextInt(100);
-		int randomNum2 = random.nextInt(100);
+		int boundForNumbers = 100;
+		int randomNum1 = random.nextInt(boundForNumbers);
+		int randomNum2 = random.nextInt(boundForNumbers);
 		System.out.println("Question: " + randomNum1 + " " + randomNum2);
 		int right = Math.min(randomNum1, randomNum2);
 		for (var i = right; i >= 1; i--) {
