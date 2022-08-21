@@ -22,7 +22,7 @@ public class Progression {
 		var temp = strProg[cut];
 		strProg[cut] = "..";
 		rightAnswer = temp;
-		System.out.println(Arrays.toString(strProg));
+		System.out.println("Question: " + Arrays.toString(strProg));
 	}
 	public static void getCondition() {
 		System.out.println("What number is missing in the progression?");
