@@ -11,10 +11,8 @@ public class GCD {
         int randomNum1 = random.nextInt(boundForNumbers);
         int randomNum2 = random.nextInt(boundForNumbers);
         System.out.println("Question: " + randomNum1 + " " + randomNum2);
-        if (randomNum1 == 0) {
-            right = randomNum2;
-        } else if (randomNum2 == 0) {
-            right = randomNum1;
+        if (randomNum1 == 0 || randomNum2 == 0) {
+            right = Math.max(randomNum1, randomNum2);
         } else {
             right = Math.min(randomNum1, randomNum2);
             for (var i = right; i >= 1; i--) {
