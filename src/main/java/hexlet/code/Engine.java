@@ -9,8 +9,8 @@ import hexlet.code.games.Prime;
 import java.util.Scanner;
 
 public class Engine {
-    private static String rightAnswer;
     public static void engine(int a) {
+        String rightAnswer = "";
         final int even = 2;
         final int calc = 3;
         final int gcd = 4;
@@ -19,10 +19,10 @@ public class Engine {
         final int gameRounds = 3;
         Cli.greetings();
         switch (a) {
-		    case even -> Even.getCondition();
-		    case calc -> Calc.getCondition();
-		    case gcd -> GCD.getCondition();
-		    case progression -> Progression.getCondition();
+            case even -> Even.getCondition();
+            case calc -> Calc.getCondition();
+            case gcd -> GCD.getCondition();
+            case progression -> Progression.getCondition();
             case prime -> Prime.getCondition();
             default -> {
             }
@@ -40,13 +40,22 @@ public class Engine {
             }
             var answer = sc.next().toLowerCase();
             switch (a) {
-                case even -> rightAnswer = Even.getRightAnswer();
-                case calc -> rightAnswer = Calc.getRightAnswer();
-                case gcd -> rightAnswer = GCD.getRightAnswer();
-                case progression -> rightAnswer = Progression.getRightAnswer();
-                case prime -> rightAnswer = Prime.getRightAnswer();
-                default -> {
-                }
+                case even:
+                    rightAnswer = Even.getRightAnswer();
+                    break;
+                case calc:
+                    rightAnswer = Calc.getRightAnswer();
+                    break;
+                case gcd:
+                    rightAnswer = GCD.getRightAnswer();
+                    break;
+                case progression:
+                    rightAnswer = Progression.getRightAnswer();
+                    break;
+                case prime:
+                    rightAnswer = Prime.getRightAnswer();
+                    break;
+                default:
             }
             var wrong = "'" + answer + "' is wrong answer ;(. Correct answer was '" + rightAnswer + "'.";
             if (answer.equals(rightAnswer) && i == 2) {
