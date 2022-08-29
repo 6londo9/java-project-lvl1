@@ -1,0 +1,9 @@
+build/
+// ignore build
+
+.gradle/
+// ignore gradle
+
+.idea/
+// ignore idea
+
