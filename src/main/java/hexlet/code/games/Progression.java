@@ -13,7 +13,6 @@ public class Progression {
     static final int BOUNDFORARRAYLENGTH = 10;
 
     public static String[][] progression() {
-        System.out.println("What number is missing in the progression?");
         Random random = new Random();
         String[][] pair = new String[Engine.GAMEROUNDS][2];
         for (var i = 0; i < Engine.GAMEROUNDS; i++) {
@@ -36,5 +35,8 @@ public class Progression {
             pair[i][0] = "Question: " + printArray;
         }
         return pair;
+    }
+    public static String getQuestion() {
+        return "What number is missing in the progression?";
     }
 }

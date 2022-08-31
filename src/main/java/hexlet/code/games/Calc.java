@@ -8,7 +8,6 @@ public class Calc {
     static final Character[] OPERATOR = {'+', '-', '*'};
     static final int BOUNDFORNUMBERS = 20;
     public static String[][] calc() {
-        System.out.println("What is the result of the expression?");
         Random random = new Random();
         String[][] pair = new String[Engine.GAMEROUNDS][2];
         for (var i = 0; i < Engine.GAMEROUNDS; i++) {
@@ -34,5 +33,8 @@ public class Calc {
             pair[i][1] = String.valueOf(right);
         }
         return pair;
+    }
+    public static String getQuestion() {
+        return "What is the result of the expression?";
     }
 }

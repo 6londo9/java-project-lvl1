@@ -4,11 +4,12 @@ import java.util.Scanner;
 
 public class Engine {
     public static final int GAMEROUNDS = 3;
-    public static void engine(String[][] pair) {
+    public static void engine(String[][] pair, String question) {
         Scanner sc = new Scanner(System.in);
         System.out.print("May I have your name? ");
         String name = sc.next();
         System.out.println("Hello, " + name + "!");
+        System.out.println(question);
         for (var i = 0; i < GAMEROUNDS; i++) {
             System.out.println(pair[i][0]);
             var answer = sc.next().toLowerCase();

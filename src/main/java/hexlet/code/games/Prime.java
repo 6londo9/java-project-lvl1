@@ -7,7 +7,6 @@ import java.util.Random;
 public class Prime {
     static final int BOUNDFORNUMBERS = 100;
     public static String[][] prime() {
-        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         Random random = new Random();
         String[][] pair = new String[Engine.GAMEROUNDS][2];
         for (var i = 0; i < Engine.GAMEROUNDS; i++) {
@@ -24,5 +23,7 @@ public class Prime {
         }
         return pair;
     }
-
+    public static String getQuestion() {
+        return "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+    }
 }

@@ -29,19 +29,19 @@ public class App {
             case EXIT:
                 break;
             case EVEN:
-                Engine.engine(Even.even());
+                Engine.engine(Even.even(), Even.getQuestion());
                 break;
             case CALC:
-                Engine.engine(Calc.calc());
+                Engine.engine(Calc.calc(), Calc.getQuestion());
                 break;
             case GCD:
-                Engine.engine(Gcd.gcd());
+                Engine.engine(Gcd.gcd(), Gcd.getQuestion());
                 break;
             case PROGRESSION:
-                Engine.engine(Progression.progression());
+                Engine.engine(Progression.progression(), Progression.getQuestion());
                 break;
             case PRIME:
-                Engine.engine(Prime.prime());
+                Engine.engine(Prime.prime(), Prime.getQuestion());
                 break;
             default:
         }

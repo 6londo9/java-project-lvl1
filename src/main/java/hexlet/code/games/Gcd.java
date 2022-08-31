@@ -5,7 +5,6 @@ import java.util.Random;
 public class Gcd {
     static final int BOUNDFORNUMBERS = 100;
     public static String[][] gcd() {
-        System.out.println("Find the greatest common divisor of given numbers.");
         Random random = new Random();
         final int questions = 3;
         String[][] pair = new String[questions][2];
@@ -28,5 +27,8 @@ public class Gcd {
             pair[i][1] = String.valueOf(right);
         }
         return pair;
+    }
+    public static String getQuestion() {
+        return "Find the greatest common divisor of given numbers.";
     }
 }
