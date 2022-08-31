@@ -1,16 +1,17 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
+
 import java.util.Random;
 
 public class Prime {
+    static final int BOUNDFORNUMBERS = 100;
     public static String[][] prime() {
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         Random random = new Random();
-        final int questions = 3;
-        String[][] pair = new String[questions][2];
-        for (var i = 0; i < questions; i++) {
-            final int boundForNumber = 100;
-            int randomNum = random.nextInt(boundForNumber);
+        String[][] pair = new String[Engine.GAMEROUNDS][2];
+        for (var i = 0; i < Engine.GAMEROUNDS; i++) {
+            int randomNum = random.nextInt(BOUNDFORNUMBERS);
             boolean check = randomNum != 1 && randomNum != 0;
             for (var k = 2; k <= Math.sqrt(randomNum); k++) {
                 if (randomNum % k == 0) {

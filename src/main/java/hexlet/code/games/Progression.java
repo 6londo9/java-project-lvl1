@@ -1,24 +1,25 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
+
 import java.util.Arrays;
 import java.util.Random;
 
 public class Progression {
+    static final int ORIGINOFLENGTH = 5;
+    static final int BOUNDOFLENGTH = 11;
+    static final int ORIGINFORFIRSTNUMBER = 1;
+    static final int BOUNDFORFIRSTNUMBER = 20;
+    static final int BOUNDFORARRAYLENGTH = 10;
 
     public static String[][] progression() {
         System.out.println("What number is missing in the progression?");
         Random random = new Random();
-        final int questions = 3;
-        String[][] pair = new String[questions][2];
-        for (var i = 0; i < questions; i++) {
-            final int originOfLength = 5;
-            final int boundOfLength = 11;
-            int length = random.nextInt(originOfLength, boundOfLength);
-            final int originForFirstNumber = 1;
-            final int boundForFirstNumber = 20;
-            int start = random.nextInt(originForFirstNumber, boundForFirstNumber);
-            final int boundForArrayLength = 10;
-            int progress = random.nextInt(boundForArrayLength);
+        String[][] pair = new String[Engine.GAMEROUNDS][2];
+        for (var i = 0; i < Engine.GAMEROUNDS; i++) {
+            int length = random.nextInt(ORIGINOFLENGTH, BOUNDOFLENGTH);
+            int start = random.nextInt(ORIGINFORFIRSTNUMBER, BOUNDFORFIRSTNUMBER);
+            int progress = random.nextInt(BOUNDFORARRAYLENGTH);
             int cut = random.nextInt(0, length - 1);
             int[] progression = new int[length];
             progression[0] = start;

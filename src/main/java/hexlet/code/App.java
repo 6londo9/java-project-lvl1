@@ -2,50 +2,45 @@ package hexlet.code;
 
 import hexlet.code.games.Even;
 import hexlet.code.games.Calc;
-import hexlet.code.games.GCD;
+import hexlet.code.games.Gcd;
 import hexlet.code.games.Progression;
 import hexlet.code.games.Prime;
 
 import java.util.Scanner;
 
 public class App {
+    static final int GREET = 1;
+    static final int EVEN = 2;
+    static final int CALC = 3;
+    static final int GCD = 4;
+    static final int PROGRESSION = 5;
+    static final int PRIME = 6;
+    static final int EXIT = 0;
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         System.out.println("Please enter the game number and press Enter");
         System.out.println("1 - Greet\n2 - Even\n3 - Calc\n4 - GCD\n5 - Progression\n6 - Prime\n0 - Exit");
         int choice = scan.nextInt();
-        final int greet = 1;
-        final int even = 2;
-        final int calc = 3;
-        final int gcd = 4;
-        final int progression = 5;
-        final int prime = 6;
-        final int exit = 0;
         switch (choice) {
-            case greet:
+            case GREET:
                 greet();
                 Cli.greetings();
                 break;
-            case exit:
+            case EXIT:
                 break;
-            case even:
-                Cli.greetings();
+            case EVEN:
                 Engine.engine(Even.even());
                 break;
-            case calc:
-                Cli.greetings();
+            case CALC:
                 Engine.engine(Calc.calc());
                 break;
-            case gcd:
-                Cli.greetings();
-                Engine.engine(GCD.gcd());
+            case GCD:
+                Engine.engine(Gcd.gcd());
                 break;
-            case progression:
-                Cli.greetings();
+            case PROGRESSION:
                 Engine.engine(Progression.progression());
                 break;
-            case prime:
-                Cli.greetings();
+            case PRIME:
                 Engine.engine(Prime.prime());
                 break;
             default:
