@@ -9,13 +9,15 @@ import hexlet.code.games.Prime;
 import java.util.Scanner;
 
 public class App {
-    static final int GREET = 1;
-    static final int EVEN = 2;
-    static final int CALC = 3;
-    static final int GCD = 4;
-    static final int PROGRESSION = 5;
-    static final int PRIME = 6;
-    static final int EXIT = 0;
+
+    public static final int GREET = 1;
+    public static final int EVEN = 2;
+    public static final int CALC = 3;
+    public static final int GCD = 4;
+    public static final int PROGRESSION = 5;
+    public static final int PRIME = 6;
+    public static final int EXIT = 0;
+
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         System.out.println("Please enter the game number and press Enter");

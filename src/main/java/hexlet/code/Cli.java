@@ -10,7 +10,4 @@ public class Cli {
         name = sc.next();
         System.out.println("Hello, " + name + "!");
     }
-    public static String getName() {
-        return name;
-    }
 }
