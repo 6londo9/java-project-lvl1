@@ -17,14 +17,14 @@ public class Engine {
             var answer = sc.next().toLowerCase();
             String rightAnswer = pair[i][1];
             if (answer.equals(rightAnswer)) {
-                String printCongratulation = i == GAME_ROUNDS - 1 ? "Congratulations, " + name + "!" : "Correct!";
-                System.out.println(printCongratulation);
+                System.out.println("Correct!");
             } else {
                 var wrong = "'" + answer + "' is wrong answer ;(. Correct answer was '" + rightAnswer + "'.";
                 System.out.println(wrong);
                 System.out.println("Let's try again, " + name + "!");
                 return;
             }
+            System.out.println("Congratulations, " + name + "!");
         }
     }
 }
