@@ -11,9 +11,9 @@ public class Engine {
         System.out.print("May I have your name? ");
         String name = sc.next();
         System.out.println("Hello, " + name + "!");
-        System.out.println("Question: " + condition);
+        System.out.println(condition);
         for (var i = 0; i < GAME_ROUNDS; i++) {
-            System.out.println(pair[i][0]);
+            System.out.println("Question: " + pair[i][0]);
             var answer = sc.next().toLowerCase();
             String rightAnswer = pair[i][1];
             if (answer.equals(rightAnswer)) {
