@@ -8,6 +8,7 @@ public class Calc {
 
     public static final Character[] OPERATORS = {'+', '-', '*'};
     public static final int BOUND_FOR_NUMBERS = 20;
+    private static final String DESCRIPTION = "What is the result of the expression?";
 
     public static String[][] calc() {
 
@@ -18,7 +19,7 @@ public class Calc {
             int randomNum2 = random.nextInt(BOUND_FOR_NUMBERS);
             int operatorsLength = random.nextInt(OPERATORS.length);
             var randomOperation = OPERATORS[operatorsLength];
-            int rightAnswer = 0;
+            int rightAnswer;
             switch (randomOperation) {
                 case '+':
                     rightAnswer = randomNum1 + randomNum2;
@@ -30,15 +31,15 @@ public class Calc {
                     rightAnswer = randomNum1 * randomNum2;
                     break;
                 default:
-                    break;
+                    throw new Error("Unknown operation: " + randomOperation + "!");
             }
-            pair[i][0] = "Question: " + randomNum1 + " " + randomOperation + " " + randomNum2;
+            pair[i][0] = randomNum1 + " " + randomOperation + " " + randomNum2;
             pair[i][1] = String.valueOf(rightAnswer);
         }
         return pair;
     }
 
     public static String getQuestion() {
-        return "What is the result of the expression?";
+        return DESCRIPTION;
     }
 }

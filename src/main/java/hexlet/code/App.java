@@ -46,6 +46,7 @@ public class App {
                 Engine.engine(Prime.prime(), Prime.getQuestion());
                 break;
             default:
+                throw new Error("Unknown game number: " + choice + "!");
         }
     }
 

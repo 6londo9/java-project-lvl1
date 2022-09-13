@@ -5,6 +5,7 @@ import java.util.Random;
 
 public class Gcd {
     public static final int BOUND_FOR_NUMBERS = 100;
+    private static final String DESCRIPTION = "Find the greatest common divisor of given numbers.";
     public static String[][] gcd() {
         Random random = new Random();
         String[][] pair = new String[Engine.GAME_ROUNDS][2];
@@ -12,7 +13,7 @@ public class Gcd {
             int rightAnswer;
             int randomNum1 = random.nextInt(BOUND_FOR_NUMBERS);
             int randomNum2 = random.nextInt(BOUND_FOR_NUMBERS);
-            pair[i][0] = "Question: " + randomNum1 + " " + randomNum2;
+            pair[i][0] = randomNum1 + " " + randomNum2;
             if (randomNum1 == 0 || randomNum2 == 0) {
                 rightAnswer = Math.max(randomNum1, randomNum2);
             } else {
@@ -24,7 +25,7 @@ public class Gcd {
     }
 
     public static String getQuestion() {
-        return "Find the greatest common divisor of given numbers.";
+        return DESCRIPTION;
     }
 
     public static int gcdLogic(int firstNumber, int secondNumber) {

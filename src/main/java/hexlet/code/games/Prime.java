@@ -6,6 +6,7 @@ import java.util.Random;
 public class Prime {
 
     public static final int BOUND_FOR_NUMBERS = 100;
+    private static final String DESCRIPTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
     public static String[][] prime() {
         Random random = new Random();
@@ -20,12 +21,12 @@ public class Prime {
                 }
             }
             pair[i][1] = check ? "yes" : "no";
-            pair[i][0] = "Question: " + randomNum;
+            pair[i][0] = String.valueOf(randomNum);
         }
         return pair;
     }
 
     public static String getQuestion() {
-        return "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+        return DESCRIPTION;
     }
 }
