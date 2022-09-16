@@ -12,9 +12,9 @@ public class Prime {
         Random random = new Random();
         String[][] arrayOfPairsQuestionsAndAnswers = new String[Engine.GAME_ROUNDS][2];
         for (var i = 0; i < Engine.GAME_ROUNDS; i++) {
-            int numberToCheckIfPrime = random.nextInt(BOUND_FOR_NUMBERS);
-            arrayOfPairsQuestionsAndAnswers[i][0] = String.valueOf(numberToCheckIfPrime);
-            arrayOfPairsQuestionsAndAnswers[i][1] = checkIfNumberIsPrime(numberToCheckIfPrime);
+            int numberForPrimeCheck = random.nextInt(BOUND_FOR_NUMBERS);
+            arrayOfPairsQuestionsAndAnswers[i][0] = String.valueOf(numberForPrimeCheck);
+            arrayOfPairsQuestionsAndAnswers[i][1] = checkIfNumberIsPrime(numberForPrimeCheck);
         }
         return arrayOfPairsQuestionsAndAnswers;
     }
@@ -23,15 +23,15 @@ public class Prime {
         return DESCRIPTION;
     }
 
-    public static String checkIfNumberIsPrime(int numberToCheck) {
-        boolean check = numberToCheck != 1 && numberToCheck != 0;
-        for (var k = 2; k <= Math.sqrt(numberToCheck); k++) {
-            if (numberToCheck % k == 0) {
-                check = false;
+    public static String checkIfNumberIsPrime(int numberForPrimeCheck) {
+        boolean isNumberPrime = numberForPrimeCheck != 1 && numberForPrimeCheck != 0;
+        for (var k = 2; k <= Math.sqrt(numberForPrimeCheck); k++) {
+            if (numberForPrimeCheck % k == 0) {
+                isNumberPrime = false;
                 break;
             }
         }
-        return check ? "yes" : "no";
+        return isNumberPrime ? "yes" : "no";
     }
 
 }
