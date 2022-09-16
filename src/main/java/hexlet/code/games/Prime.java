@@ -12,9 +12,9 @@ public class Prime {
         Random random = new Random();
         String[][] arrayOfPairsQuestionsAndAnswers = new String[Engine.GAME_ROUNDS][2];
         for (var i = 0; i < Engine.GAME_ROUNDS; i++) {
-            int randomNum = random.nextInt(BOUND_FOR_NUMBERS);
-            arrayOfPairsQuestionsAndAnswers[i][0] = String.valueOf(randomNum);
-            arrayOfPairsQuestionsAndAnswers[i][1] = checkIfNumberIsPrime(randomNum);
+            int numberToCheckIfPrime = random.nextInt(BOUND_FOR_NUMBERS);
+            arrayOfPairsQuestionsAndAnswers[i][0] = String.valueOf(numberToCheckIfPrime);
+            arrayOfPairsQuestionsAndAnswers[i][1] = checkIfNumberIsPrime(numberToCheckIfPrime);
         }
         return arrayOfPairsQuestionsAndAnswers;
     }

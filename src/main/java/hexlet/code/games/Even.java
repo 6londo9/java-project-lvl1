@@ -12,9 +12,9 @@ public class Even {
         Random random = new Random();
         String[][] arrayOfPairsQuestionsAndAnswers = new String[Engine.GAME_ROUNDS][2];
         for (var i = 0; i < Engine.GAME_ROUNDS; i++) {
-            int randomNum = random.nextInt(BOUND_FOR_NUMBERS);
-            arrayOfPairsQuestionsAndAnswers[i][0] = String.valueOf(randomNum);
-            arrayOfPairsQuestionsAndAnswers[i][1] = checkIfNumberIsEven(randomNum);
+            int numberToCheckParity = random.nextInt(BOUND_FOR_NUMBERS);
+            arrayOfPairsQuestionsAndAnswers[i][0] = String.valueOf(numberToCheckParity);
+            arrayOfPairsQuestionsAndAnswers[i][1] = checkIfNumberIsEven(numberToCheckParity);
         }
         return arrayOfPairsQuestionsAndAnswers;
     }
