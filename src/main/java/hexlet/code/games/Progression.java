@@ -10,7 +10,6 @@ public class Progression {
     static final int BOUND_OF_LENGTH = 11;
     static final int ORIGIN_FOR_FIRST_NUMBER = 1;
     static final int BOUND_FOR_FIRST_NUMBER = 20;
-    static final int ORIGIN_FOR_ARRAY_LENGTH = 2;
     static final int BOUND_FOR_ARRAY_LENGTH = 10;
     private static final String DESCRIPTION = "What number is missing in the progression?";
 
@@ -20,7 +19,7 @@ public class Progression {
         for (var i = 0; i < Engine.GAME_ROUNDS; i++) {
             int length = random.nextInt(ORIGIN_OF_LENGTH, BOUND_OF_LENGTH);
             int start = random.nextInt(ORIGIN_FOR_FIRST_NUMBER, BOUND_FOR_FIRST_NUMBER);
-            int step = random.nextInt(ORIGIN_FOR_ARRAY_LENGTH, BOUND_FOR_ARRAY_LENGTH);
+            int step = random.nextInt(BOUND_FOR_ARRAY_LENGTH);
             int hiddenMemberIndex = random.nextInt(0, length - 1);
             String[] progression = generateProgression(start, step, length);
             arrayOfPairsQuestionsAndAnswers[i][1] = progression[hiddenMemberIndex];

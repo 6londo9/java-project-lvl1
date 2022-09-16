@@ -17,10 +17,10 @@ public class Calc {
         for (var i = 0; i < Engine.GAME_ROUNDS; i++) {
             int randomNum1 = random.nextInt(BOUND_FOR_NUMBERS);
             int randomNum2 = random.nextInt(BOUND_FOR_NUMBERS);
-            int operatorsLength = random.nextInt(OPERATORS.length);
-            var randomOperation = OPERATORS[operatorsLength];
-            arrayOfPairsQuestionsAndAnswers[i][0] = randomNum1 + " " + randomOperation + " " + randomNum2;
-            arrayOfPairsQuestionsAndAnswers[i][1] = calculateValue(randomNum1, randomOperation, randomNum2);
+            int randomOperatorIndex = random.nextInt(OPERATORS.length);
+            var randomOperator = OPERATORS[randomOperatorIndex];
+            arrayOfPairsQuestionsAndAnswers[i][0] = randomNum1 + " " + randomOperator + " " + randomNum2;
+            arrayOfPairsQuestionsAndAnswers[i][1] = calculateValue(randomNum1, randomOperator, randomNum2);
         }
         return arrayOfPairsQuestionsAndAnswers;
     }

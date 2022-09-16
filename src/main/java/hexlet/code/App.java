@@ -25,8 +25,8 @@ public class App {
         int choice = scan.nextInt();
         switch (choice) {
             case GREET:
-                greet();
-                Cli.greetings();
+                System.out.println("Welcome to the Brain Games!");
+                Cli.greetUser();
                 break;
             case EXIT:
                 break;
@@ -50,7 +50,4 @@ public class App {
         }
     }
 
-    private static void greet() {
-        System.out.println("Welcome to the Brain Games!");
-    }
 }

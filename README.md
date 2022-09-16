@@ -13,7 +13,7 @@ You can check out all of them by clicking the following links down below.
   Here you should do some math operations.
 #### [GCD](https://asciinema.org/a/S3wF5hLLCQ1R4wdlJwK8b6Q6l)
   In this game you need to find Greatest Common Divisor of two given numbers.
-#### [Progression](https://asciinema.org/a/VtgazzmirrEg3Ga1hwM1RqRnV)
+#### [Progression](https://asciinema.org/a/8shm7tG0naRN9VNoEzuUBJ6om)
   This is a game, where you need to fill missed part of progression.
 #### [Prime](https://asciinema.org/a/Owfxl1U4U73keh8sEhCi7O46B)
   And the last, but not least game - Prime. Here you need to define if given number is prime or not.
