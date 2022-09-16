@@ -6,16 +6,16 @@ public class Engine {
 
     public static final int GAME_ROUNDS = 3;
 
-    public static void engine(String[][] pair, String condition) {
+    public static void engine(String[][] arrayOfPairsQuestionsAndAnswers, String descriptionOfGame) {
         Scanner sc = new Scanner(System.in);
         System.out.print("May I have your name? ");
         String name = sc.next();
         System.out.println("Hello, " + name + "!");
-        System.out.println(condition);
+        System.out.println(descriptionOfGame);
         for (var i = 0; i < GAME_ROUNDS; i++) {
-            System.out.println("Question: " + pair[i][0]);
+            System.out.println("Question: " + arrayOfPairsQuestionsAndAnswers[i][0]);
             var answer = sc.next().toLowerCase();
-            String rightAnswer = pair[i][1];
+            String rightAnswer = arrayOfPairsQuestionsAndAnswers[i][1];
             if (answer.equals(rightAnswer)) {
                 System.out.println("Correct!");
             } else {

@@ -8,18 +8,23 @@ public class Even {
     public static final int BOUND_FOR_NUMBERS = 100;
     private static final String DESCRIPTION = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
-    public static String[][] even() {
+    public static String[][] isEven() {
         Random random = new Random();
-        String[][] pair = new String[Engine.GAME_ROUNDS][2];
+        String[][] arrayOfPairsQuestionsAndAnswers = new String[Engine.GAME_ROUNDS][2];
         for (var i = 0; i < Engine.GAME_ROUNDS; i++) {
             int randomNum = random.nextInt(BOUND_FOR_NUMBERS);
-            pair[i][0] = String.valueOf(randomNum);
-            pair[i][1] = randomNum % 2 == 0 ? "yes" : "no";
+            arrayOfPairsQuestionsAndAnswers[i][0] = String.valueOf(randomNum);
+            arrayOfPairsQuestionsAndAnswers[i][1] = checkIfNumberIsEven(randomNum);
         }
-        return pair;
+        return arrayOfPairsQuestionsAndAnswers;
     }
 
-    public static String getQuestion() {
+    public static String getDescription() {
         return DESCRIPTION;
     }
+
+    public static String checkIfNumberIsEven(int numberToCheck) {
+        return numberToCheck % 2 == 0 ? "yes" : "no";
+    }
+
 }

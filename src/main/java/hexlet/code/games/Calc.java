@@ -10,36 +10,41 @@ public class Calc {
     public static final int BOUND_FOR_NUMBERS = 20;
     private static final String DESCRIPTION = "What is the result of the expression?";
 
-    public static String[][] calc() {
+    public static String[][] getCalculation() {
 
         Random random = new Random();
-        String[][] pair = new String[Engine.GAME_ROUNDS][2];
+        String[][] arrayOfPairsQuestionsAndAnswers = new String[Engine.GAME_ROUNDS][2];
         for (var i = 0; i < Engine.GAME_ROUNDS; i++) {
             int randomNum1 = random.nextInt(BOUND_FOR_NUMBERS);
             int randomNum2 = random.nextInt(BOUND_FOR_NUMBERS);
             int operatorsLength = random.nextInt(OPERATORS.length);
             var randomOperation = OPERATORS[operatorsLength];
-            int rightAnswer;
-            switch (randomOperation) {
-                case '+':
-                    rightAnswer = randomNum1 + randomNum2;
-                    break;
-                case '-':
-                    rightAnswer = randomNum1 - randomNum2;
-                    break;
-                case '*':
-                    rightAnswer = randomNum1 * randomNum2;
-                    break;
-                default:
-                    throw new Error("Unknown operation: " + randomOperation + "!");
-            }
-            pair[i][0] = randomNum1 + " " + randomOperation + " " + randomNum2;
-            pair[i][1] = String.valueOf(rightAnswer);
+            arrayOfPairsQuestionsAndAnswers[i][0] = randomNum1 + " " + randomOperation + " " + randomNum2;
+            arrayOfPairsQuestionsAndAnswers[i][1] = calculateValue(randomNum1, randomOperation, randomNum2);
         }
-        return pair;
+        return arrayOfPairsQuestionsAndAnswers;
     }
 
-    public static String getQuestion() {
+    public static String getDescription() {
         return DESCRIPTION;
     }
+
+    public static String calculateValue(int firstNumber, Character operator, int secondNumber) {
+        int resultOfOperation;
+        switch (operator) {
+            case '+':
+                resultOfOperation = firstNumber + secondNumber;
+                break;
+            case '-':
+                resultOfOperation = firstNumber - secondNumber;
+                break;
+            case '*':
+                resultOfOperation = firstNumber * secondNumber;
+                break;
+            default:
+                throw new Error("Unknown operation: " + operator + "!");
+        }
+        return String.valueOf(resultOfOperation);
+    }
+
 }

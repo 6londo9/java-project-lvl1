@@ -8,25 +8,30 @@ public class Prime {
     public static final int BOUND_FOR_NUMBERS = 100;
     private static final String DESCRIPTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
-    public static String[][] prime() {
+    public static String[][] isPrime() {
         Random random = new Random();
-        String[][] pair = new String[Engine.GAME_ROUNDS][2];
+        String[][] arrayOfPairsQuestionsAndAnswers = new String[Engine.GAME_ROUNDS][2];
         for (var i = 0; i < Engine.GAME_ROUNDS; i++) {
             int randomNum = random.nextInt(BOUND_FOR_NUMBERS);
-            boolean check = randomNum != 1 && randomNum != 0;
-            for (var k = 2; k <= Math.sqrt(randomNum); k++) {
-                if (randomNum % k == 0) {
-                    check = false;
-                    break;
-                }
-            }
-            pair[i][1] = check ? "yes" : "no";
-            pair[i][0] = String.valueOf(randomNum);
+            arrayOfPairsQuestionsAndAnswers[i][0] = String.valueOf(randomNum);
+            arrayOfPairsQuestionsAndAnswers[i][1] = checkIfNumberIsPrime(randomNum);
         }
-        return pair;
+        return arrayOfPairsQuestionsAndAnswers;
     }
 
-    public static String getQuestion() {
+    public static String getDescription() {
         return DESCRIPTION;
     }
+
+    public static String checkIfNumberIsPrime(int numberToCheck) {
+        boolean check = numberToCheck != 1 && numberToCheck != 0;
+        for (var k = 2; k <= Math.sqrt(numberToCheck); k++) {
+            if (numberToCheck % k == 0) {
+                check = false;
+                break;
+            }
+        }
+        return check ? "yes" : "no";
+    }
+
 }

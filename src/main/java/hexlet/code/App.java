@@ -31,19 +31,19 @@ public class App {
             case EXIT:
                 break;
             case EVEN:
-                Engine.engine(Even.even(), Even.getQuestion());
+                Engine.engine(Even.isEven(), Even.getDescription());
                 break;
             case CALC:
-                Engine.engine(Calc.calc(), Calc.getQuestion());
+                Engine.engine(Calc.getCalculation(), Calc.getDescription());
                 break;
             case GCD:
-                Engine.engine(Gcd.gcd(), Gcd.getQuestion());
+                Engine.engine(Gcd.getGcd(), Gcd.getDescription());
                 break;
             case PROGRESSION:
-                Engine.engine(Progression.progression(), Progression.getQuestion());
+                Engine.engine(Progression.getProgression(), Progression.getDescription());
                 break;
             case PRIME:
-                Engine.engine(Prime.prime(), Prime.getQuestion());
+                Engine.engine(Prime.isPrime(), Prime.getDescription());
                 break;
             default:
                 throw new Error("Unknown game number: " + choice + "!");
