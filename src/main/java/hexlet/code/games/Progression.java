@@ -38,7 +38,7 @@ public class Progression {
         String[] progression = new String[progressionLength];
         progression[0] = String.valueOf(first);
         for (var k = 1; k < progressionLength; k++) {
-            int currentPartOfProgression = Integer.parseInt(progression[k - 1]) + step * k;
+            int currentPartOfProgression = Integer.parseInt(progression[k - 1]) + step;
             progression[k] = String.valueOf(currentPartOfProgression);
         }
         return progression;
