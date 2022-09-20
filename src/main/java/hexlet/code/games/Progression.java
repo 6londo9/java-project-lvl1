@@ -28,7 +28,7 @@ public class Progression {
             String replacement = "..";
             arrayOfPairsQuestionsAndAnswers[i][0] = Arrays.toString(progression)
                     .replace(targetToReplace, replacement)
-                    .replaceAll("\\[|\\]", "");
+                    .replaceAll("\\[|\\]|,|", "");
         }
         return arrayOfPairsQuestionsAndAnswers;
     }
