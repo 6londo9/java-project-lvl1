@@ -1,37 +1,30 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-import java.util.Random;
 
 public class Prime {
 
-    public static final int BOUND_FOR_NUMBERS = 100;
     private static final String DESCRIPTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
-    public static String[][] isPrime() {
-        Random random = new Random();
+    public static void runGame() {
         String[][] arrayOfPairsQuestionsAndAnswers = new String[Engine.GAME_ROUNDS][2];
         for (var i = 0; i < Engine.GAME_ROUNDS; i++) {
-            int numberForPrimeCheck = random.nextInt(BOUND_FOR_NUMBERS);
+            int numberForPrimeCheck = Utils.getLargeNumber();
             arrayOfPairsQuestionsAndAnswers[i][0] = String.valueOf(numberForPrimeCheck);
-            arrayOfPairsQuestionsAndAnswers[i][1] = checkIfNumberIsPrime(numberForPrimeCheck);
+            arrayOfPairsQuestionsAndAnswers[i][1] = isPrime(numberForPrimeCheck) ? "yes" : "no";
         }
-        return arrayOfPairsQuestionsAndAnswers;
+        Engine.engine(arrayOfPairsQuestionsAndAnswers, DESCRIPTION);
     }
 
-    public static String getDescription() {
-        return DESCRIPTION;
-    }
-
-    public static String checkIfNumberIsPrime(int numberForPrimeCheck) {
-        boolean isNumberPrime = numberForPrimeCheck != 1 && numberForPrimeCheck != 0;
+    public static boolean isPrime(int numberForPrimeCheck) {
+        boolean isPrime = numberForPrimeCheck != 1 && numberForPrimeCheck != 0;
         for (var k = 2; k <= Math.sqrt(numberForPrimeCheck); k++) {
             if (numberForPrimeCheck % k == 0) {
-                isNumberPrime = false;
+                isPrime = false;
                 break;
             }
         }
-        return isNumberPrime ? "yes" : "no";
+        return isPrime;
     }
 
 }

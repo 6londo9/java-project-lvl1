@@ -19,35 +19,38 @@ public class App {
     public static final int EXIT = 0;
 
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter the game number and press Enter");
         System.out.println("1 - Greet\n2 - Even\n3 - Calc\n4 - GCD\n5 - Progression\n6 - Prime\n0 - Exit");
-        int choice = scan.nextInt();
-        switch (choice) {
+        System.out.print("Your choice: ");
+        int selectedGame = scanner.nextInt();
+        switch (selectedGame) {
             case GREET:
                 System.out.println("Welcome to the Brain Games!");
                 Cli.greetUser();
                 break;
             case EXIT:
+                System.out.println("Goodbye!");
                 break;
             case EVEN:
-                Engine.engine(Even.isEven(), Even.getDescription());
+                Even.runGame();
                 break;
             case CALC:
-                Engine.engine(Calc.getCalculation(), Calc.getDescription());
+                Calc.runGame();
                 break;
             case GCD:
-                Engine.engine(Gcd.getGcd(), Gcd.getDescription());
+                Gcd.runGame();
                 break;
             case PROGRESSION:
-                Engine.engine(Progression.getProgression(), Progression.getDescription());
+                Progression.runGame();
                 break;
             case PRIME:
-                Engine.engine(Prime.isPrime(), Prime.getDescription());
+                Prime.runGame();
                 break;
             default:
-                throw new Error("Unknown game number: " + choice + "!");
+                throw new Error("Unknown game number: " + selectedGame + "!. Restart the game.");
         }
+        scanner.close();
     }
 
 }
