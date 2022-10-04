@@ -25,9 +25,8 @@ public class Progression {
 
             String[] progression = generateProgression(start, step, length);
             arrayOfPairsQuestionsAndAnswers[i][1] = progression[hiddenMemberIndex];
-            String targetToReplace = arrayOfPairsQuestionsAndAnswers[i][1];
-            arrayOfPairsQuestionsAndAnswers[i][0] = String.join(" ", progression)
-                    .replace(targetToReplace, "..");
+            progression[hiddenMemberIndex] = "..";
+            arrayOfPairsQuestionsAndAnswers[i][0] = String.join(" ", progression);
         }
 
         Engine.engine(arrayOfPairsQuestionsAndAnswers, DESCRIPTION);
