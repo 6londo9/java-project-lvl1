@@ -7,7 +7,7 @@ public class Even {
 
     static final int DEFAULT_ORIGIN_FOR_NUMBERS = 0;
     static final int LARGE_BOUND_FOR_NUMBERS = 100;
-    private static final String DESCRIPTION = "Answer 'yes' if number even otherwise answer 'no'.";
+    private static final String DESCRIPTION = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
     public static void runGame() {
         String[][] arrayOfPairsQuestionsAndAnswers = new String[Engine.GAME_ROUNDS][2];
