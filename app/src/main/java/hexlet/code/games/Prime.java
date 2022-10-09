@@ -10,16 +10,16 @@ public class Prime {
     private static final String DESCRIPTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
     public static void runGame() {
-        String[][] arrayOfPairsQuestionsAndAnswers = new String[Engine.GAME_ROUNDS][2];
+        String[][] questionsAndAnswers = new String[Engine.GAME_ROUNDS][2];
 
         for (var i = 0; i < Engine.GAME_ROUNDS; i++) {
             int numberForPrimeCheck = Utils.getRandomNumber(DEFAULT_ORIGIN_FOR_NUMBERS, LARGE_BOUND_FOR_NUMBERS);
 
-            arrayOfPairsQuestionsAndAnswers[i][0] = String.valueOf(numberForPrimeCheck);
-            arrayOfPairsQuestionsAndAnswers[i][1] = isPrime(numberForPrimeCheck) ? "yes" : "no";
+            questionsAndAnswers[i][0] = String.valueOf(numberForPrimeCheck);
+            questionsAndAnswers[i][1] = isPrime(numberForPrimeCheck) ? "yes" : "no";
         }
 
-        Engine.engine(arrayOfPairsQuestionsAndAnswers, DESCRIPTION);
+        Engine.engine(questionsAndAnswers, DESCRIPTION);
     }
 
     public static boolean isPrime(int numberForPrimeCheck) {

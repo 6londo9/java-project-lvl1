@@ -10,19 +10,19 @@ public class Gcd {
     private static final String DESCRIPTION = "Find the greatest common divisor of given numbers.";
 
     public static void runGame() {
-        String[][] arrayOfPairsQuestionsAndAnswers = new String[Engine.GAME_ROUNDS][2];
+        String[][] questionsAndAnswers = new String[Engine.GAME_ROUNDS][2];
 
         for (var i = 0; i < Engine.GAME_ROUNDS; i++) {
             int rightAnswer;
             int randomNum1 = Utils.getRandomNumber(DEFAULT_ORIGIN_FOR_NUMBERS, LARGE_BOUND_FOR_NUMBERS);
             int randomNum2 = Utils.getRandomNumber(DEFAULT_ORIGIN_FOR_NUMBERS, LARGE_BOUND_FOR_NUMBERS);
 
-            arrayOfPairsQuestionsAndAnswers[i][0] = randomNum1 + " " + randomNum2;
+            questionsAndAnswers[i][0] = randomNum1 + " " + randomNum2;
             rightAnswer = gcd(randomNum1, randomNum2);
-            arrayOfPairsQuestionsAndAnswers[i][1] = String.valueOf(rightAnswer);
+            questionsAndAnswers[i][1] = String.valueOf(rightAnswer);
         }
 
-        Engine.engine(arrayOfPairsQuestionsAndAnswers, DESCRIPTION);
+        Engine.engine(questionsAndAnswers, DESCRIPTION);
     }
 
     public static int gcd(int firstNumber, int secondNumber) {

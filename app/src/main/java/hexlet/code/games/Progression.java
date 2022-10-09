@@ -15,7 +15,7 @@ public class Progression {
     private static final String DESCRIPTION = "What number is missing in the progression?";
 
     public static void runGame() {
-        String[][] arrayOfPairsQuestionsAndAnswers = new String[Engine.GAME_ROUNDS][2];
+        String[][] questionsAndAnswers = new String[Engine.GAME_ROUNDS][2];
 
         for (var i = 0; i < Engine.GAME_ROUNDS; i++) {
             int length = Utils.getRandomNumber(ORIGIN_FOR_ARRAY_LENGTH, BOUND_FOR_ARRAY_LENGTH);
@@ -24,12 +24,12 @@ public class Progression {
             int hiddenMemberIndex = Utils.getRandomNumber(DEFAULT_ORIGIN_FOR_NUMBERS, length - 1);
 
             String[] progression = generateProgression(start, step, length);
-            arrayOfPairsQuestionsAndAnswers[i][1] = progression[hiddenMemberIndex];
+            questionsAndAnswers[i][1] = progression[hiddenMemberIndex];
             progression[hiddenMemberIndex] = "..";
-            arrayOfPairsQuestionsAndAnswers[i][0] = String.join(" ", progression);
+            questionsAndAnswers[i][0] = String.join(" ", progression);
         }
 
-        Engine.engine(arrayOfPairsQuestionsAndAnswers, DESCRIPTION);
+        Engine.engine(questionsAndAnswers, DESCRIPTION);
     }
 
     public static String[] generateProgression(int first, int step, int progressionLength) {

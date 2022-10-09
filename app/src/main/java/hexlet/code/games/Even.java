@@ -10,16 +10,16 @@ public class Even {
     private static final String DESCRIPTION = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
     public static void runGame() {
-        String[][] arrayOfPairsQuestionsAndAnswers = new String[Engine.GAME_ROUNDS][2];
+        String[][] questionsAndAnswers = new String[Engine.GAME_ROUNDS][2];
 
         for (var i = 0; i < Engine.GAME_ROUNDS; i++) {
             int numberForEvenCheck = Utils.getRandomNumber(DEFAULT_ORIGIN_FOR_NUMBERS, LARGE_BOUND_FOR_NUMBERS);
 
-            arrayOfPairsQuestionsAndAnswers[i][0] = String.valueOf(numberForEvenCheck);
-            arrayOfPairsQuestionsAndAnswers[i][1] = isEven(numberForEvenCheck) ? "yes" : "no";
+            questionsAndAnswers[i][0] = String.valueOf(numberForEvenCheck);
+            questionsAndAnswers[i][1] = isEven(numberForEvenCheck) ? "yes" : "no";
         }
 
-        Engine.engine(arrayOfPairsQuestionsAndAnswers, DESCRIPTION);
+        Engine.engine(questionsAndAnswers, DESCRIPTION);
     }
 
     public static boolean isEven(int numberForEvenCheck) {

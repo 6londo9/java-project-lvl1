@@ -6,7 +6,7 @@ public class Engine {
 
     public static final int GAME_ROUNDS = 3;
 
-    public static void engine(String[][] arrayOfPairsQuestionsAndAnswers, String descriptionOfGame) {
+    public static void engine(String[][] questionsAndAnswers, String descriptionOfGame) {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Welcome to the Brain Games!");
@@ -15,7 +15,7 @@ public class Engine {
         System.out.println("Hello, " + name + "!");
         System.out.println(descriptionOfGame);
 
-        for (String[] roundData : arrayOfPairsQuestionsAndAnswers) {
+        for (String[] roundData : questionsAndAnswers) {
             String question = roundData[0];
             String answer = roundData[1];
 

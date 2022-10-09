@@ -12,7 +12,7 @@ public class Calc {
     private static final String DESCRIPTION = "What is the result of the expression?";
 
     public static void runGame() {
-        String[][] arrayOfPairsQuestionsAndAnswers = new String[Engine.GAME_ROUNDS][2];
+        String[][] questionsAndAnswers = new String[Engine.GAME_ROUNDS][2];
 
         for (var i = 0; i < Engine.GAME_ROUNDS; i++) {
             int randomNum1 = Utils.getRandomNumber(DEFAULT_ORIGIN_FOR_NUMBERS, BOUND_FOR_NUMBERS);
@@ -20,10 +20,10 @@ public class Calc {
             int randomOperatorIndex = Utils.getRandomNumber(DEFAULT_ORIGIN_FOR_NUMBERS, OPERATORS.length);
             var randomOperator = OPERATORS[randomOperatorIndex];
 
-            arrayOfPairsQuestionsAndAnswers[i][0] = randomNum1 + " " + randomOperator + " " + randomNum2;
-            arrayOfPairsQuestionsAndAnswers[i][1] = calculateValue(randomNum1, randomOperator, randomNum2);
+            questionsAndAnswers[i][0] = randomNum1 + " " + randomOperator + " " + randomNum2;
+            questionsAndAnswers[i][1] = calculateValue(randomNum1, randomOperator, randomNum2);
         }
-        Engine.engine(arrayOfPairsQuestionsAndAnswers, DESCRIPTION);
+        Engine.engine(questionsAndAnswers, DESCRIPTION);
     }
 
     public static String calculateValue(int firstNumber, Character operator, int secondNumber) {
